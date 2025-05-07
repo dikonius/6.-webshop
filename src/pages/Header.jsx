@@ -1,3 +1,5 @@
+import { NavLink } from "react-router";
+
 const Header = () => {
     
   
@@ -32,17 +34,17 @@ const Header = () => {
                 <button className="hamburger-menu">Meny</button>
             </NavLink> */}
 
-            <NavLink to="/pages/games/" className="navlink-header">
+            <NavLink to="/games/" className="navlink-header">
                 <button className="header-btn">Games</button>
             </NavLink>
 
-            <NavLink to="/pages/consoles/" className="navlink-header">
+            <NavLink to="/consoles/" className="navlink-header">
                 <button className="header-btn">Consoles</button>
             </NavLink>
          
-            <NavLink to="pages/cart/:cartId?" className="navlink-header">
-            <button className="header-btn">
-                {cartCount > 0 && (
+            <NavLink to="cart/:cartId?" className="navlink-header">
+            <button className="header-btn">Cart
+                {/* {cartCount > 0 && (
                 <span className="cart-count">{cartCount}</span>
                 )}
                 <svg
@@ -75,7 +77,7 @@ const Header = () => {
                     strokeLinejoin="round"
                     />
                 </g>
-                </svg>
+                </svg> */}
             </button>
             </NavLink>
             
