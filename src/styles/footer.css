@@ -1,0 +1,28 @@
+
+.socials-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.social-links {
+	text-decoration: none;
+	color: var(--home-color);
+}
+
+.social-logos {
+	height: 1.2em;
+	width: 1.2em;
+	margin: 1.2em;
+	transition: all 1s;
+}
+
+.social-logos:hover {
+	box-shadow: 0 0 0.25em 0.25em var(--header-bg-color);
+	transform: scale(1.5);
+}
+
+.social-links:hover {
+	color: var(--header-bg-color);
+	transition: all 0.5s ease-in;
+}
