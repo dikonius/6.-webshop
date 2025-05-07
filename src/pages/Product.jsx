@@ -1,11 +1,33 @@
-const Product = () => {
+import { useEffect } from "react"
+import { useProductStore } from "../data/store.js"
+// import { getProducts } from "../data/crud.js"
 
 
-	return (
-        <main className="product-container">
-            <h1>Product</h1>
-        </main>
-		
-	)
-}
-export default Product;
+const Consoles = () => {
+    const products = useProductStore(state => state.products);
+    const setProducts = useProductStore(state => state.setProducts);
+  
+    // useEffect(() => {
+    //   if (products.length === 0) {
+    //     getProducts(setProducts);
+    //   }
+    // }, []);
+  
+    return (
+      <main>
+  
+        {products
+          .filter(pr => pr.type === "console")
+          .map(pr => (
+            <div key={pr.id} className="console-card">
+              <img className="product-image" src={pr.image} alt={pr.title} />
+              <h3 className="product-title">{pr.title}</h3>
+              <p>{pr.price}</p>
+            </div>
+          ))}
+          
+      </main>
+    );
+  };
+  
+  export default Consoles;
