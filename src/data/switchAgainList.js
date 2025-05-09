@@ -43,9 +43,9 @@ const switchAgainList = [
     {
         id: 6,
         type: "game",
-        title: "Pokémon Sword",
-        description: "Begin your adventure as a Pokémon Trainer by choosing one of three new partner Pokémon: Grookey, Scorbunny, or Sobble. Then embark on a journey in the new Galar region, where you’ll challenge the troublemakers of Team Yell, while unraveling the mystery behind the Legendary Pokémon Zacian and Zamazenta! Explore the Wild Area, a vast expanse of land where the player can freely control the camera. Team up with three other players locally or online in the new multiplayer co-op Max Raid Battles.",
-        image: "https://scale.coolshop-cdn.com/product-media.coolshop-cdn.com/2346VY/4e1b415f8a6d41f2b016261a5b16a2b8.png/f/pokemon-sword-uk-se-dk-fi.png?height=960&transparent=1&borderless=1",
+        title: "Pokemon Shining Pearl",
+        description: "Adventures together with Pokémon that appeared in the game Pokémon Pearl Version.Players of the original games can visit familiar locations and relive well-known scenes, while first-time players can enjoy many fun encounters and surprises that the Sinnoh region has to offer. The original story and the scale of the Sinnoh region’s towns and routes have been faithfully recreated. This remake has also been revitalized with some of the player-friendly features of modern Pokémon games and close-up, personal Pokémon battle scenes.",
+        image: "https://scale.coolshop-cdn.com/product-media.coolshop-cdn.com/238G6W/ebc450a5c4f14cd4b55756ae05b8a49a.jpg/f/pokemon-shining-pearl.jpg?height=960&transparent=1&borderless=1",
         price: 22
     },
     {

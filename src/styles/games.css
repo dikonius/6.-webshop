@@ -1,0 +1,41 @@
+.game-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--main-bg-color);
+}
+
+.games-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    max-width: 75vw;
+    
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+    background-color: var(--productCard-bg-color);
+    padding-top: 0.5em;
+    transition: all 1s;
+    
+}
+
+.game-image {
+    width: 90%;
+    height: auto;
+}
+
+.product-card:hover {
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 0.15em 0.15em var(--productCard-bg-color);
+    background-color: var(--productCard-bg-color);
+}

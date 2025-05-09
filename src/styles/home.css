@@ -1,4 +1,7 @@
 .card-price {
     font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
+    font-weight:900;
+    font-size: 1.3em;
+    color:rgb(131, 13, 13);
 }
+

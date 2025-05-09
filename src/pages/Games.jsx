@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useProductStore } from "../data/store.js"
 import { getProducts } from "../data/crud.js"
+import "../styles/games.css"
 
 
 const Games = () => {
@@ -14,18 +15,18 @@ const Games = () => {
     }, []);
   
     return (
-      <main>
-  
-        {products
-          .filter(pr => pr.type === "game")
-          .map(pr => (
-            <div key={pr.id} className="product-card">
-              <img className="game-image" src={pr.image} alt={pr.title} />
-              <h3 className="product-title">{pr.title}</h3>
-              <p className="card-price">€{pr.price}</p>
-            </div>
-          ))}
-          
+      <main className="game-page">
+        <section className="games-container"> 
+          {products
+            .filter(pr => pr.type === "game")
+            .map(pr => (
+              <div key={pr.id} className="product-card">
+                <img className="game-image" src={pr.image} alt={pr.title} />
+                <h3 className="product-title">{pr.title}</h3>
+                <p className="card-price">€{pr.price}</p>
+              </div>
+            ))}
+        </section>
       </main>
     );
   };
