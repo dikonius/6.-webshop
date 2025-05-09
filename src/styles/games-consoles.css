@@ -1,8 +1,15 @@
-.game-page {
+.games-page {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     background-color: var(--main-bg-color);
+}
+.consoles-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--main-bg-color);
+    min-height: 82.5vh;
 }
 
 .games-container {
@@ -14,25 +21,47 @@
     
 }
 
-.product-card {
+
+.console-card, .game-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 200px;
+    min-height: 300px;  
     text-align: center;
     background-color: var(--productCard-bg-color);
-    padding-top: 0.5em;
+    padding: 0.5em;
     transition: all 1s;
+    margin: 0.5em;
     
 }
 
-.game-image {
-    width: 90%;
-    height: auto;
+.console-card {
+    max-height: 350px;
 }
 
-.product-card:hover {
+.game-card {
+    max-height: 500px;
+}
+
+
+.game-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.3em;
+}
+
+.console-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.3em;
+}
+
+.game-card:hover, .console-card:hover{
     transition: all 0.5s ease-in;
     cursor: pointer;
     transform: scale(1.05);

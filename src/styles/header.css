@@ -8,12 +8,18 @@
     background-color: var(--main-bg-color);
 }
 
+.navlink-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
 .logo-btn, .cart-btn { 
     cursor: pointer;
     margin: 0.25em;
     transition: all 1s;
     border-radius: 0.3em;
-    /* border: 1px solid var(--buttonBorder-color); */
 }
 
 .logo-btn:hover, .cart-btn:hover {
@@ -62,3 +68,23 @@
 }
 
 
+@media (max-width: 400px) {
+    .logo-btn {
+        height: 2em;
+        width: 5em;
+    }
+
+    .cart-btn {
+        height: 1.5em;
+        width: 3em;
+        
+        
+    }
+    .header-btn {
+
+        
+        padding: 0.25em 0.5em;
+        
+    
+    }
+}

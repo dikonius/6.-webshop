@@ -4,4 +4,10 @@
     box-sizing: border-box;
     font-family: "Pixelify Sans", sans-serif;
     
+    
+    
+}
+
+body {
+    background-color: var(--main-bg-color);
 }

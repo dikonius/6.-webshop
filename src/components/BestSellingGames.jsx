@@ -19,9 +19,9 @@ const BestGames = () => {
     .slice(0, 3); 
 
   return (
-    <main>
+    <main className="bestsellers-container">
       {randomGames.map((pr) => (
-        <div key={pr.id} className="product-card">
+        <div key={pr.id} className="game-card">
           <img className="game-image" src={pr.image} alt={pr.title} />
           <h3 className="product-title">{pr.title}</h3>
           <p className="card-price">€{pr.price}</p>

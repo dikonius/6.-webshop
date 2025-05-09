@@ -14,18 +14,21 @@ const Consoles = () => {
     }, []);
   
     return (
-      <main>
-  
-        {products
-          .filter(pr => pr.type === "console")
-          .map(pr => (
-            <div key={pr.id} className="product-card">
-              <img className="console-image" src={pr.image} alt={pr.title} />
-              <h3 className="product-title">{pr.title}</h3>
-              <p className="card-price">€{pr.price}</p>
-            </div>
-          ))}
+      <main className="consoles-page">
+        <section className="games-container">
+          {products
+            .filter(pr => pr.type === "console")
+            .map(pr => (
+              <div key={pr.id} className="console-card">
+                <img className="console-image" src={pr.image} alt={pr.title} />
+                <h3 className="product-title">{pr.title}</h3>
+                <p className="card-price">€{pr.price}</p>
+              </div>
+            ))}
           
+        </section>
+  
+        
       </main>
     );
   };
