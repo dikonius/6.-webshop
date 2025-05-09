@@ -1,14 +1,9 @@
 
-.socials-container {
+/* .socials-container {
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
-}
+} */
 
-.social-links {
-	text-decoration: none;
-	color: var(--home-color);
-}
 
 .social-logos {
 	border-radius: 0.2em;
@@ -19,11 +14,28 @@
 }
 
 .social-logos:hover {
-	box-shadow: 0 0 0.25em 0.25em green;
+	box-shadow: 0 0 0.25em 0.25em rgb(245, 243, 243);
 	transform: scale(1.2);
 }
 
-.social-links:hover {
-	color: var(--header-bg-color);
-	transition: all 0.5s ease-in;
+
+.footer-btn:hover {
+	background-color: var(--productCard-bg-color);
+    color: var(--button-bg-color);
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+    transform: scale(1.1);
+    /* box-shadow: 0 0 0.15em 0.15em var(--button-color) */
+
+}
+
+.footer-btn {
+	background-color: var(--button-bg-color);
+    color: var(--button-color);
+    border-radius: 0.3em;
+    border: 1px solid var(--buttonBorder-color);
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+    margin: 0.25em;
+    transition: all 1s;
 }
