@@ -1,3 +1,6 @@
+import BestGames from "../components/BestSellingGames"
+import "../styles/home.css"
+
 const Home = () => {
 
 
@@ -15,6 +18,7 @@ const Home = () => {
 
 			<div className="bestsellers">
 				<h2>Best selling Nintendo Switch games!</h2>
+				<BestGames />
 			</div>
 
 			<div className="ns2-container">

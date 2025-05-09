@@ -22,7 +22,7 @@ const Games = () => {
             <div key={pr.id} className="product-card">
               <img className="game-image" src={pr.image} alt={pr.title} />
               <h3 className="product-title">{pr.title}</h3>
-              <p className="card-price">{pr.price} €</p>
+              <p className="card-price">€{pr.price}</p>
             </div>
           ))}
           

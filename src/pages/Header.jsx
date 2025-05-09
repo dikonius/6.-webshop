@@ -29,7 +29,7 @@ const Header = () => {
 
         
             <NavLink to="/" className="navlink-header">
-              <img className="logo-btn" src="/src/assets/logo.png"></img>
+              <img className="logo-btn" src="/src/assets/logo.png"/>
             </NavLink>
             
             {/* <NavLink to="/pages/games/" className="navlink">
@@ -45,7 +45,7 @@ const Header = () => {
             </NavLink>
          
             <NavLink to="cart/:cartId?" className="navlink-header">
-            <button className="header-btn">Cart
+                <img className="cart-btn" src="/src/assets/cart-icon.png"/>
                 {/* {cartCount > 0 && (
                 <span className="cart-count">{cartCount}</span>
                 )}
@@ -80,7 +80,6 @@ const Header = () => {
                     />
                 </g>
                 </svg> */}
-            </button>
             </NavLink>
             
         </nav>

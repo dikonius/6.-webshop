@@ -4,6 +4,15 @@
 	justify-content: center;
 } */
 
+.footer-container {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 1em 2em;
+	background-color: var(--header-bg-color);
+    color: var(--header-color);
+    background-color: var(--main-bg-color);
+}
 
 .social-logos {
 	border-radius: 0.2em;
@@ -25,7 +34,7 @@
     transition: all 0.5s ease-in;
     cursor: pointer;
     transform: scale(1.1);
-    /* box-shadow: 0 0 0.15em 0.15em var(--button-color) */
+    box-shadow: 0 0 0.15em 0.15em var(--productCard-bg-color)
 
 }
 
@@ -34,8 +43,29 @@
     color: var(--button-color);
     border-radius: 0.3em;
     border: 1px solid var(--buttonBorder-color);
-    padding: 0.25em 0.5em;
+    padding: 0.5em 1em;
     cursor: pointer;
     margin: 0.25em;
     transition: all 1s;
+}
+
+.admin-btn:hover {
+	
+    
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 0 0.25em 0.25em rgb(245, 243, 243);
+
+}
+
+.admin-btn {
+	background-color: var(--main-bg-color);
+    color: white;
+    border-radius: 0.3em;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    margin: 0.25em;
+    transition: all 1s;
+	border: 1px solid rgb(245, 243, 243)
 }

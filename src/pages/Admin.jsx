@@ -25,7 +25,7 @@ const Admin = () => {
             <div key={pr.id} className="admin-product-card">
               <img className="console-image" src={pr.image} alt={pr.title} />
               <h3 className="product-title">{pr.title}</h3>
-              <p className="card-price">{pr.price} €</p>
+              <p className="card-price">€{pr.price}</p>
               <button className="edit-button">Edit</button>
               <button className="delete-button">Delete</button>
               
