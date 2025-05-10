@@ -10,5 +10,9 @@
     --bestText-color: rgba(205, 219, 142, 1);
     --bestText-bg-color: rgba(74, 74, 74, 1);
     --main-bg-color: rgba(50, 47, 47, 1);
+    --editAdd-btn-bg-color: rgba(19, 66, 14, 1);
+    --editAddHover-bg-color: rgb(22, 153, 7);
+    --delete-btn-bg-color: rgba(66, 21, 14, 1);
+    --deleteHover-btn-bg-color: rgb(168, 43, 24);
 
 }

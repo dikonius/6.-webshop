@@ -1,0 +1,76 @@
+.admin-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    justify-content: center;
+}
+
+.admin-product-card {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    width: 50vw;
+    min-height: 180px;
+    /* max-height: 200px; */
+    background-color: var(--bestText-bg-color);
+    color: var(--bestText-color);
+    border-radius: 0.5em;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+.product-image {
+    width: 100px;
+    height: auto;
+    border-radius: 0.3em;
+}
+
+.card-price-admin {
+    font-size: 1.5em;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.add-edit-button {
+
+    background-color: var(--editAdd-btn-bg-color);
+    color: var(--button-color);
+    border-radius: 0.3em;
+    border: 1px solid var(--buttonBorder-color);
+    padding: 0.5em 1em;
+    cursor: pointer;
+    margin: 0.25em;
+    transition: all 1s;
+
+}
+
+.add-edit-button:hover {
+    background-color: var(--editAddHover-bg-color);
+    color: white;
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 0 0.15em 0.15em var(--productCard-bg-color)
+}
+.delete-button {
+
+    background-color: var(--delete-btn-bg-color);
+    color: var(--button-color);
+    border-radius: 0.3em;
+    border: 1px solid var(--buttonBorder-color);
+    padding: 0.5em 1em;
+    cursor: pointer;
+    margin: 0.25em;
+    transition: all 1s;
+
+}
+
+.delete-button:hover {
+    background-color: var(--deleteHover-btn-bg-color);
+    color: white;
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 0 0.15em 0.15em var(--productCard-bg-color)
+}

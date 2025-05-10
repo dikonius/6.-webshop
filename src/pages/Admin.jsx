@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { useProductStore } from "../data/store.js"
 import { getProducts } from "../data/crud.js"
 import ImportProductsButton from "../components/ImportProductsButton.jsx";
+import "../styles/admin.css"
 
 
 
@@ -16,17 +17,17 @@ const Admin = () => {
     }, []);
   
     return (
-      <main>
-            <button className="Add new product"></button>
+      <main className="admin-page">
+            <button className="add-edit-button">Add new product</button>
             {/* <ImportProductsButton /> */}
             
 
             {products.map(pr => (
             <div key={pr.id} className="admin-product-card">
-              <img className="console-image" src={pr.image} alt={pr.title} />
-              <h3 className="product-title">{pr.title}</h3>
-              <p className="card-price">€{pr.price}</p>
-              <button className="edit-button">Edit</button>
+              <img className="product-image" src={pr.image} alt={pr.title} />
+              <h3 className="product-title-admin">{pr.title}</h3>
+              <p className="card-price-admin">€{pr.price}</p>
+              <button className="add-edit-button">Edit</button>
               <button className="delete-button">Delete</button>
               
             </div>
