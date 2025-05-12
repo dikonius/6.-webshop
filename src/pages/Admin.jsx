@@ -4,6 +4,7 @@ import { getProducts, deleteProduct } from "../data/crud.js";
 import { useNavigate } from "react-router-dom";
 import "../styles/admin.css";
 import "../styles/adminForm.css";
+import ImportProductsButton from "../components/ImportProductsButton.jsx";
 
 const Admin = () => {
   const products = useProductStore((state) => state.products);
@@ -34,6 +35,7 @@ const Admin = () => {
       >
         Add new product
       </button>
+      {/* <ImportProductsButton /> */}
       <div className="admin-products-container">
         {Array.isArray(products) && products.length > 0 ? (
           products.map((pr) => (

@@ -57,6 +57,7 @@
 .admin-page label,
 .admin-page h2,
 .admin-page .error,
+.admin-page option,
 .admin-page button {
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;

@@ -1,21 +1,25 @@
-import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, getDoc } from "firebase/firestore";
+import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "./database";
 
 async function getProducts(setProducts) {
   try {
     const productsCollection = collection(db, "Switch Again");
     const productsSnapshot = await getDocs(productsCollection);
-    const productsList = productsSnapshot.docs.map((doc) => ({
-      id: String(doc.id), // Ensure ID is a string
-      ...doc.data(),
-    }));
+    const productsList = productsSnapshot.docs.map((doc) => {
+      const data = doc.data();
+      // Ensure id is the document ID, not overridden by data.id
+      return {
+        id: String(doc.id),
+        ...data,
+      };
+    });
     setProducts(productsList);
     console.log("getProducts success:", productsList);
     return productsList;
   } catch (error) {
-    console.error("Error fetching products:", error.message);
+    console.log("Error fetching products:", error.message);
     setProducts([]);
-    throw error;
+    return [];
   }
 }
 
@@ -32,38 +36,66 @@ async function getProductById(productId) {
       return null;
     }
   } catch (error) {
-    console.error("Error fetching product by ID:", error.message);
-    throw error;
+    console.log("Error fetching product by ID:", error.message);
+    return null;
   }
 }
 
 async function addProduct(product, setProducts) {
   try {
+    // Ensure no id field is included in the document
+    const { id, ...productData } = product;
     const productsCollection = collection(db, "Switch Again");
-    const docRef = await addDoc(productsCollection, product);
+    const docRef = await addDoc(productsCollection, productData);
     setProducts((prev) => {
-      const newProduct = { id: String(docRef.id), ...product };
+      const newProduct = { id: String(docRef.id), ...productData };
       console.log("Adding product:", newProduct);
       return [...(Array.isArray(prev) ? prev : []), newProduct];
     });
   } catch (error) {
-    console.error("Error adding product:", error.message);
+    console.log("Error adding product:", error.message);
+    throw error;
+  }
+}
+
+async function createProductWithId(productId, product, setProducts) {
+  try {
+    // Ensure no id field is included in the document
+    const { id, ...productData } = product;
+    const productDoc = doc(db, "Switch Again", String(productId));
+    await setDoc(productDoc, productData);
+    setProducts((prev) => {
+      const newProduct = { id: String(productId), ...productData };
+      console.log("Created product with ID:", newProduct);
+      // Replace existing product with same ID, or append if new
+      const updatedProducts = (Array.isArray(prev) ? prev : []).filter(
+        (p) => String(p.id) !== String(productId)
+      );
+      return [...updatedProducts, newProduct];
+    });
+  } catch (error) {
+    console.log("Error creating product with ID:", error.message);
     throw error;
   }
 }
 
 async function updateProduct(productId, updatedProduct, setProducts) {
   try {
+    // Ensure no id field is included in the document
+    const { id, ...productData } = updatedProduct;
     const productDoc = doc(db, "Switch Again", String(productId));
-    await updateDoc(productDoc, updatedProduct);
-    setProducts((prev) =>
-      (Array.isArray(prev) ? prev : []).map((product) =>
-        String(product.id) === String(productId) ? { id: String(productId), ...updatedProduct } : product
-      )
-    );
-    console.log("Updated product:", productId);
+    await updateDoc(productDoc, productData);
+    setProducts((prev) => {
+      const updatedProducts = (Array.isArray(prev) ? prev : []).map((product) =>
+        String(product.id) === String(productId)
+          ? { id: String(productId), ...productData }
+          : product
+      );
+      console.log("Updated product:", productId);
+      return updatedProducts;
+    });
   } catch (error) {
-    console.error("Error updating product:", error.message);
+    console.log("Error updating product:", error.message);
     throw error;
   }
 }
@@ -74,9 +106,9 @@ async function deleteProduct(productId) {
     await deleteDoc(productDoc);
     console.log("Deleted product:", productId);
   } catch (error) {
-    console.error("Error deleting product:", error.message);
+    console.log("Error deleting product:", error.message);
     throw error;
   }
 }
 
-export { getProducts, getProductById, addProduct, updateProduct, deleteProduct };
+export { getProducts, getProductById, addProduct, createProductWithId, updateProduct, deleteProduct };
