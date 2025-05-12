@@ -30,7 +30,7 @@ const router = createHashRouter([
 				Component: Consoles
 			},
 			{
-				path: '/product',
+				path: '/product/:productId',
 				Component: Product
 			},
 			{
