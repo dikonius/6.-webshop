@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { useProductStore } from "../data/store.js";
-import { getProducts, deleteProduct } from "../data/crud.js";
+import { getProducts } from "../data/crud.js";
 import { useNavigate } from "react-router-dom";
 import "../styles/admin.css";
 import "../styles/adminForm.css";
 import ImportProductsButton from "../components/ImportProductsButton.jsx";
+import DeleteProduct from "../components/DeleteProduct.jsx";
 
 const Admin = () => {
   const products = useProductStore((state) => state.products);
@@ -17,15 +18,6 @@ const Admin = () => {
     }
   }, [products, setProducts]);
 
-  const handleDelete = async (productId) => {
-    if (window.confirm("Are you sure you want to delete this product?")) {
-      await deleteProduct(productId);
-      setProducts(products.filter((product) => product.id !== productId));
-    }
-  };
-
-  // Debug log to inspect products
-  console.log("Admin products:", products);
 
   return (
     <main className="admin-page">
@@ -49,16 +41,11 @@ const Admin = () => {
               >
                 Edit
               </button>
-              <button
-                className="delete-button"
-                onClick={() => handleDelete(pr.id)}
-              >
-                Delete
-              </button>
+              <DeleteProduct productId={pr.id} />
             </div>
           ))
         ) : (
-          <p>No products available.</p>
+          <p className="form-title-admin">No products available.</p>
         )}
       </div>
     </main>
