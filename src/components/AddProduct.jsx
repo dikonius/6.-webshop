@@ -4,6 +4,7 @@ import { addProduct } from "../data/crud.js";
 import { useProductStore } from "../data/store.js";
 import { validateProduct } from "../data/validation.js";
 import "../styles/admin.css";
+import "../styles/adminForm.css";
 
 const AddProduct = () => {
   const navigate = useNavigate();
@@ -44,7 +45,7 @@ const AddProduct = () => {
 
   return (
     <main className="admin-page">
-      <h2>Add New Product</h2>
+      <h2 className="form-title-admin">Add New Product</h2>
       <form onSubmit={handleSubmit} className="product-form">
         <div className="form-group">
           <label htmlFor="type">Type</label>
@@ -58,7 +59,8 @@ const AddProduct = () => {
             <option value="game">Game</option>
             <option value="console">Console</option>
           </select>
-          {errors.type && <p className="error">{errors.type}</p>}
+          {errors.type && <p className="error visible">{errors.type}</p>}
+          {!errors.type && <p className="error"></p>}
         </div>
         <div className="form-group">
           <label htmlFor="title">Title</label>
@@ -69,7 +71,8 @@ const AddProduct = () => {
             onChange={handleChange}
             placeholder="Enter title"
           />
-          {errors.title && <p className="error">{errors.title}</p>}
+          {errors.title && <p className="error visible">{errors.title}</p>}
+          {!errors.title && <p className="error"></p>}
         </div>
         <div className="form-group">
           <label htmlFor="description">Description</label>
@@ -80,7 +83,8 @@ const AddProduct = () => {
             onChange={handleChange}
             placeholder="Enter description"
           />
-          {errors.description && <p className="error">{errors.description}</p>}
+          {errors.description && <p className="error visible">{errors.description}</p>}
+          {!errors.description && <p className="error"></p>}
         </div>
         <div className="form-group">
           <label htmlFor="image">Image URL</label>
@@ -91,7 +95,8 @@ const AddProduct = () => {
             onChange={handleChange}
             placeholder="Enter image URL"
           />
-          {errors.image && <p className="error">{errors.image}</p>}
+          {errors.image && <p className="error visible">{errors.image}</p>}
+          {!errors.image && <p className="error"></p>}
         </div>
         <div className="form-group">
           <label htmlFor="price">Price (€)</label>
@@ -104,7 +109,8 @@ const AddProduct = () => {
             onChange={handleChange}
             placeholder="Enter price"
           />
-          {errors.price && <p className="error">{errors.price}</p>}
+          {errors.price && <p className="error visible">{errors.price}</p>}
+          {!errors.price && <p className="error"></p>}
         </div>
         <div className="form-actions">
           <button type="submit" className="add-edit-button">

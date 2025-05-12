@@ -1,5 +1,5 @@
 .product-form {
-  max-width: 600px;
+  width: 500px;
   margin: 20px auto;
   padding: 20px;
   border: 1px solid #ddd;
@@ -41,4 +41,27 @@
   color: #e74c3c;
   font-size: 0.9rem;
   margin-top: 5px;
+  min-height: 20px; 
+  line-height: 20px; 
+  visibility: hidden; 
+}
+
+.error.visible {
+  visibility: visible; 
+}
+
+.admin-page form,
+.admin-page input,
+.admin-page select,
+.admin-page textarea,
+.admin-page label,
+.admin-page h2,
+.admin-page .error,
+.admin-page button {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.form-title-admin {
+    color: var(--bestText-color);
 }

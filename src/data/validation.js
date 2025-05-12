@@ -15,13 +15,13 @@ const productSchema = Joi.object({
   }),
   image: Joi.string()
     .uri()
-    .pattern(/\.(png|jpg|jpeg|gif)$/i)
+    .pattern(/\.(png|jpg|jpeg|jpg|gif|webp|tiff|bmp|svg|avif)$/i)
     .required()
     .messages({
       "string.empty": "Image URL is required",
       "string.uri": "Image URL must be a valid URL",
       "string.pattern.base":
-        "Image URL must point to a valid image (png, jpg, jpeg, gif)",
+        "Image URL must end with png, jpg, jpeg or gif",
       "any.required": "Image URL is required",
     }),
   price: Joi.number().positive().required().messages({

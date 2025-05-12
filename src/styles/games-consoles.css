@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     justify-content: center;
     background-color: var(--main-bg-color);
+    align-items: center;
 }
 .consoles-page {
     display: flex;
@@ -10,6 +11,7 @@
     justify-content: center;
     background-color: var(--main-bg-color);
     min-height: 82.5vh;
+    align-items: center;
 }
 
 .games-container {
