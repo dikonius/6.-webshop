@@ -23,8 +23,8 @@ const Consoles = () => {
             .map(pr => (
               <div key={pr.id} onClick={() => navigate(`/product/${pr.id}`)} className="console-card">
                 <img className="console-image" src={pr.image} alt={pr.title} />
-                <h3 className="product-title">{pr.title}</h3>
-                <p className="card-price">€{pr.price}</p>
+                <h3 className="console-title">{pr.title}</h3>
+                <p className="console-price">€{pr.price}</p>
               </div>
             ))}
           

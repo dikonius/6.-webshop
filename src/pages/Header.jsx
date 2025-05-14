@@ -1,5 +1,5 @@
-import "../styles/header.css";
-import "../styles/variables.css";
+
+import "./Header.css"
 import { NavLink } from "react-router";
 
 const Header = () => {
@@ -24,10 +24,10 @@ const Header = () => {
     // });
   
     return (
-      <header className="header-container">
+      
         <nav className="nav-container">
 
-        
+          <div className="logo-games-container">
             <NavLink to="/" className="navlink-header">
               <img className="logo-btn" src="/src/assets/logo.png"/>
             </NavLink>
@@ -40,7 +40,10 @@ const Header = () => {
                 <button className="header-btn">Games</button>
             </NavLink>
 
-            <NavLink to="/consoles/" className="navlink-header">
+          </div>
+            
+          <div className="consoles-cart-container">
+              <NavLink to="/consoles/" className="navlink-header">
                 <button className="header-btn">Consoles</button>
             </NavLink>
          
@@ -81,9 +84,11 @@ const Header = () => {
                 </g>
                 </svg> */}
             </NavLink>
+          </div>
+            
             
         </nav>
-      </header>
+      
     );
   };
   

@@ -58,27 +58,6 @@ async function addProduct(product, setProducts) {
   }
 }
 
-async function createProductWithId(productId, product, setProducts) {
-  try {
-    // Ensure no id field is included in the document
-    const { id, ...productData } = product;
-    const productDoc = doc(db, "Switch Again", String(productId));
-    await setDoc(productDoc, productData);
-    setProducts((prev) => {
-      const newProduct = { id: String(productId), ...productData };
-      console.log("Created product with ID:", newProduct);
-      // Replace existing product with same ID, or append if new
-      const updatedProducts = (Array.isArray(prev) ? prev : []).filter(
-        (p) => String(p.id) !== String(productId)
-      );
-      return [...updatedProducts, newProduct];
-    });
-  } catch (error) {
-    console.log("Error creating product with ID:", error.message);
-    throw error;
-  }
-}
-
 async function updateProduct(productId, updatedProduct, setProducts) {
   try {
     // Ensure no id field is included in the document
@@ -111,4 +90,4 @@ async function deleteProduct(productId) {
   }
 }
 
-export { getProducts, getProductById, addProduct, createProductWithId, updateProduct, deleteProduct };
+export { getProducts, getProductById, addProduct, updateProduct, deleteProduct };

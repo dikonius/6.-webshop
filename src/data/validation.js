@@ -2,32 +2,33 @@ import Joi from "joi";
 
 const productSchema = Joi.object({
   type: Joi.string().valid("game", "console").required().messages({
-    "any.required": "Type is required",
-    "any.only": "Type must be either 'game' or 'console'",
+    "any.required": "Please select a type",
+    "any.only": "Please choose either 'game' or 'console' as the type",
+    "string.empty": "Please select a type"
   }),
   title: Joi.string().trim().min(1).required().messages({
-    "string.empty": "Title is required",
-    "any.required": "Title is required",
+    "string.empty": "Please enter a title",
+    "any.required": "Please enter a title",
   }),
   description: Joi.string().trim().min(1).required().messages({
-    "string.empty": "Description is required",
-    "any.required": "Description is required",
+    "string.empty": "Please write a description",
+    "any.required": "Please write a description",
   }),
   image: Joi.string()
     .uri()
     .pattern(/\.(png|jpg|jpeg|jpg|gif|webp|tiff|bmp|svg|avif)$/i)
     .required()
     .messages({
-      "string.empty": "Image URL is required",
-      "string.uri": "Image URL must be a valid URL",
+      "string.empty": "Please provide an image URL",
+      "string.uri": "Please enter a valid image URL",
       "string.pattern.base":
-        "Image URL must end with png, jpg, jpeg or gif",
-      "any.required": "Image URL is required",
+        "Please use an image URL ending with png, jpg, jpeg, gif, webp, tiff, bmp, svg, or avif",
+      "any.required": "Please provide an image URL",
     }),
   price: Joi.number().positive().required().messages({
-    "number.base": "Price must be a number",
-    "number.positive": "Price must be a positive number",
-    "any.required": "Price is required",
+    "number.base": "Please enter a valid number for the price",
+    "number.positive": "Please enter a positive number for the price",
+    "any.required": "Please enter a price",
   }),
 });
 

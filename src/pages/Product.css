@@ -1,0 +1,202 @@
+.product-page {
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.console-page-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 550px;
+    border-radius: 0.5em;
+    margin: 0.5em 2em 0.5em 2em;
+    background-color: white;
+}
+
+.product-console-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.3em;
+    
+}
+
+.product-game-image {
+    width: 20%;
+    height: auto;
+    border-radius: 0.3em;
+    margin: 0.5em 2em 0.5em 2em;
+    display: flex;
+}
+
+.product-page-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: var(--bestText-color);
+
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 50vw;
+    margin-right: 2em;
+    /* margin: 0 auto; */
+}
+
+.description-container{
+    padding: 3em;
+    background-color: var(--bestText-bg-color);
+    border-radius: 0.5em;
+    text-align: center;
+    /* margin-top: 2em; */
+}
+
+.welcome-description {
+    color: var(--text-color);
+    font-size: 1.2em;
+}
+
+.purchase-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bestText-bg-color);
+    border-radius: 0.3em;
+    padding: 1em;
+    margin-top: 2em;
+    gap: 1em;
+}
+
+.product-card-price {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    font-size: 2em;
+    color: rgb(255, 255, 255);
+    margin-top: auto;
+
+}
+
+.add-to-cart-btn {
+    background-color: var(--editAdd-btn-bg-color);
+    color: var(--button-color);
+    border-radius: 0.3em;
+    border: 1px solid var(--buttonBorder-color);
+    padding: 0.7em;
+    /* width: 10px;
+    height: 48px; */
+    font-size: 1.2em;
+    cursor: pointer;
+    margin: 0.25em;
+    transition: all 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--editAddHover-bg-color);
+    color: white;
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 0 0.15em 0.15em var(--productCard-bg-color)
+}
+
+.back-btn {
+    background-color: var(--adminBtn-bg-color);
+    color: var(--button-color);
+    border-radius: 0.3em;
+    border: none;
+    padding: 0.7em;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin: 0.25em;
+    transition: all 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-btn:hover {
+    background-color: var(--deleteHover-btn-bg-color);
+    color: white;
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 0 0.15em 0.15em var(--productCard-bg-color)
+}
+
+.product-page-btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+@media (max-width: 1200px) {
+    .product-game-image {
+        width: 30vw;
+    }
+    .info-container {
+        
+        max-width: 40vw;
+        
+}
+}
+
+@media (max-width: 1000px) {
+    .product-page {
+        flex-direction: column;
+    }
+    .info-container {
+        max-width: 80vw;
+        margin-right: 0;
+    }
+
+    .product-game-image {
+    width: 80vw;
+}
+}
+
+@media (max-width: 480px) {
+    
+
+    .product-game-image {
+    min-width: 320px;
+}
+
+.info-container {
+    max-width: 100vw;
+   
+}
+
+.description-container{
+    padding: 0.5em;
+}
+.welcome-description {
+    font-size: 1em;
+}
+
+.product-page-title {
+    font-size: 1.5em;
+
+}
+
+.console-page-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    height: 320px;
+    border-radius: 0.5em;
+    
+}
+
+}

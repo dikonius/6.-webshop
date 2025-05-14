@@ -14,19 +14,20 @@ const BestGames = () => {
     }
   }, []);
 
-  // Shuffle and select 3 random games
+  
   const randomGames = products
     .filter((pr) => pr.type === "game")
-    .sort(() => Math.random() - 0.5) // Shuffle the array
+    .sort(() => Math.random() - 0.5) 
     .slice(0, 3); 
 
+    
   return (
     <main className="bestsellers-container">
       {randomGames.map((pr) => (
-        <div key={pr.id} onClick={() => navigate(`/product/${pr.id}`)} className="game-card">
-          <img className="game-image" src={pr.image} alt={pr.title} />
-          <h3 className="product-title">{pr.title}</h3>
-          <p className="card-price">€{pr.price}</p>
+        <div key={pr.id} onClick={() => navigate(`/product/${pr.id}`)} className="best-game-card">
+          <img className="best-game-image" src={pr.image} alt={pr.title} />
+          <h3 className="best-product-title">{pr.title}</h3>
+          <p className="best-card-price">€{pr.price}</p>
         </div>
       ))}
     </main>

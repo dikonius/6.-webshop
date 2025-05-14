@@ -21,9 +21,15 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    max-width: 30em;
+    max-width: 35em;
     text-align: center;
     color: var(--text-color);
+}
+
+.best-game-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.3em;
 }
 
 
@@ -43,10 +49,36 @@
     text-align: center;
     background-color: var(--bestText-bg-color);
     border-radius: 0.5em;
-    width: 45vw;
+    width: 800px;
     margin-top: 2em;
     padding-bottom: 2em;
 }
+
+.best-game-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 200px;
+    min-height: 300px;  
+    text-align: center;
+    background-color: var(--productCard-bg-color);
+    padding: 0.5em;
+    transition: all 1s;
+    margin: 0.5em;
+    
+}
+
+.best-game-card:hover {
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 0.15em 0.15em var(--productCard-bg-color);
+    background-color: var(--productCard-bg-color);
+}
+
 
 .bestsellers-container {
     display: flex;
@@ -57,7 +89,7 @@
     width: 100%
 }
 
-.card-price {
+.best-card-price {
     font-family: 'Courier New', Courier, monospace;
     font-weight:900;
     font-size: 1.3em;
@@ -65,8 +97,10 @@
     margin-top: auto;
 }
 
-.product-title{
+.best-product-title{
     margin-top: auto;
+    /* width: auto; */
+    
 }
 
 .ns2-img {
@@ -89,9 +123,22 @@
     text-align: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1031px) {
+    .bestsellers-heading {
+        margin: 1em 0 1em 0;
+    }
     .bestsellers {
-        width: 90vw;
+        width: 80vw;
+       
+    }
+
+}
+
+
+@media (max-width: 617px) {
+    
+    .bestsellers {
+        width: 100vw;
     }
 
     .hero-logo  {
@@ -103,9 +150,32 @@
         
     }
 
-    .ns2-announcement-top, .ns2-announcement {
-        
+    .ns2-announcement-top, .ns2-announcement {   
         font-size: 1em;
-        
     }
+
+    .best-product-title {
+        padding: 0 0.5em 0 0.5em;
+    }
+    
+    .best-game-card {
+
+        width: 80vw;
+        padding: 0;
+    
+    }
+}
+
+@media (max-width: 480px) {
+    .best-card-price {
+    font-size: 1.5em;
+    margin-top: 0;
+    }
+
+    .best-product-title{
+    margin-top: 0;
+    padding: 0;
+    }
+
+    
 }

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useProductStore } from "../data/store.js";
 import { getProducts } from "../data/crud.js";
 import { useNavigate } from "react-router-dom";
-import "../styles/admin.css";
+import "./Admin.css";
 import "../styles/adminForm.css";
 import ImportProductsButton from "../components/ImportProductsButton.jsx";
 import DeleteProduct from "../components/DeleteProduct.jsx";
@@ -32,7 +32,7 @@ const Admin = () => {
         {Array.isArray(products) && products.length > 0 ? (
           products.map((pr) => (
             <div key={pr.id} className="admin-product-card">
-              <img className="product-image" src={pr.image} alt={pr.title} />
+              <img className="product-image-admin" src={pr.image} alt={pr.title} />
               <h3 className="product-title-admin">{pr.title}</h3>
               <p className="card-price-admin">€{pr.price}</p>
               <button

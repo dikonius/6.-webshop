@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { updateProduct, getProducts, getProductById, createProductWithId } from "../data/crud.js";
+import { updateProduct, getProducts, getProductById } from "../data/crud.js";
 import { useProductStore } from "../data/store.js";
 import { validateProduct } from "../data/validation.js";
 import "../styles/admin.css";
@@ -27,7 +27,7 @@ const EditProduct = () => {
       console.log("EditProduct productId:", productId);
       console.log("EditProduct current products:", products);
 
-      // Defensive check to ensure products is an array
+     
       const foundProduct = Array.isArray(products)
         ? products.find((p) => String(p.id) === String(productId))
         : null;

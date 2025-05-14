@@ -5,7 +5,7 @@ const useProductStore = create((set) => ({
 
 	setProducts: (pr) =>
 		set((state) => ({
-			products: Array.isArray(pr) ? pr : [], // Ensure pr is an array
+			products: Array.isArray(pr) ? pr : [],
 		}))
 }))
 

@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;   
     justify-content: center;
-    min-height: 80vh;
+    min-height: 84vh;
     overflow: hidden;
 }
 
@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content:space-around;
-    width: 50vw;
+    /* width: 50vw; */
     min-height: 180px;
     /* max-height: 200px; */
     background-color: var(--bestText-bg-color);
@@ -31,9 +31,9 @@
     
 }
 
-.product-image {
-    width: 100px;
-    height: auto;
+.product-image-admin {
+    width: 15%;
+    max-height: 200px;
     border-radius: 0.3em;
 }
 

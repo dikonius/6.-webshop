@@ -1,5 +1,5 @@
 import BestGames from "../components/BestSellingGames"
-import "../styles/home.css"
+import "./Home.css"
 
 const Home = () => {
 

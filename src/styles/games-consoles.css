@@ -4,14 +4,14 @@
     justify-content: center;
     background-color: var(--main-bg-color);
     align-items: center;
-    min-height: 80vh;
+    min-height: 82vh;
 }
 .consoles-page {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     background-color: var(--main-bg-color);
-    min-height: 82.5vh;
+    min-height: 82vh;
     align-items: center;
 }
 
@@ -20,16 +20,15 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 2em;
-    max-width: 75vw;
+    max-width: 90vw;
     
 }
 
 
-.console-card, .game-card {
+.game-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -40,16 +39,44 @@
     padding: 0.5em;
     transition: all 1s;
     margin: 0.5em;
+    .card-price {
+        font-family: 'Courier New', Courier, monospace;
+        font-weight:900;
+        font-size: 1.5em;
+        color:rgb(131, 13, 13);
+    }
+    
+}
+.console-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 200px;
+    min-height: 300px;  
+    text-align: center;
+    padding: 0.5em;
+    transition: all 1s;
+    margin: 0.5em;
+    /* gap: 1em; */
+
+    .console-price {
+        font-family: 'Courier New', Courier, monospace;
+        font-weight:900;
+        font-size: 1.5em;
+        color:rgb(131, 13, 13);
+    }
     
 }
 
 .console-card {
-    max-height: 350px;
+    max-height: 400px;
 }
 
-.game-card {
-    max-height: 500px;
-}
 
 
 .game-image {
@@ -69,5 +96,43 @@
     cursor: pointer;
     transform: scale(1.05);
     box-shadow: 0 0 0.15em 0.15em var(--productCard-bg-color);
+    
+}
+.game-card:hover {
     background-color: var(--productCard-bg-color);
+}
+
+
+@media (max-width: 617px) {
+
+    .console-card {
+        max-height: 500px;
+        min-height: 300px;
+    }
+
+    .game-card {
+        width: 90vw;
+        padding-bottom: 1em;
+    }
+
+    .game-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.3em;
+    }
+
+}
+
+@media (max-width: 515px) {
+     .console-card {
+        width: 90vw;
+        padding-bottom: 1em;
+        
+    }
+
+    .console-image {
+        width: 100%;
+        height: auto;
+        border-radius: 0.3em;
+    }
 }
