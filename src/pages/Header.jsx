@@ -1,39 +1,40 @@
-
-import "./Header.css"
-import { NavLink } from "react-router";
+import "./Header.css";
+import { NavLink } from "react-router-dom"; 
+import { useProductStore } from "../data/store.js"; 
 
 const Header = () => {
-  
-    return (
-      
-        <nav className="nav-container">
+  const cart = useProductStore((state) => state.cart);
+  const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0); 
 
-          <div className="logo-games-container">
-            <NavLink to="/" className="navlink-header">
-              <img className="logo-btn" src="/src/assets/logo.png"/>
-            </NavLink>
-
-            <NavLink to="/games/" className="navlink-header">
-                <button className="header-btn">Games</button>
-            </NavLink>
-
+  return (
+    <nav className="nav-container">
+      <div className="logo-games-container">
+        <NavLink to="/" className="navlink-header">
+          <img className="logo-btn" src="/src/assets/logo.png" alt="Logo" />
+        </NavLink>
+        <NavLink to="/games" className="navlink-header">
+          <button className="header-btn">Games</button>
+        </NavLink>
+      </div>
+      <div className="consoles-cart-container">
+        <NavLink to="/consoles" className="navlink-header">
+          <button className="header-btn">Consoles</button>
+        </NavLink>
+        <NavLink to="/cart" className="navlink-header">
+          <div className="cart-icon-container">
+            <img
+              className="cart-btn"
+              src="/src/assets/cart-icon.png"
+              alt="Cart"
+            />
+            {cartItemCount > 0 && (
+              <span className="cart-badge">{cartItemCount}</span>
+            )}
           </div>
-            
-          <div className="consoles-cart-container">
-              <NavLink to="/consoles/" className="navlink-header">
-                <button className="header-btn">Consoles</button>
-            </NavLink>
-         
-            <NavLink to="cart/:cartId?" className="navlink-header">
-                <img className="cart-btn" src="/src/assets/cart-icon.png"/>
-            </NavLink>
-          </div>
-            
-            
-        </nav>
-      
-    );
-  };
-  
-  export default Header;
-  
+        </NavLink>
+      </div>
+    </nav>
+  );
+};
+
+export default Header;

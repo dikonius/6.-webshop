@@ -139,6 +139,32 @@
     gap: 1em;
 }
 
+.product-cart-btn {
+    background-color: var(--button-bg-color);
+    color: var(--button-color);
+    border-radius: 0.3em;
+    border: 1px solid var(--buttonBorder-color);
+    padding: 1.1em;
+    width: 135px;
+    height: 48px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin: 0.25em;
+    transition: all 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-cart-btn:hover {
+    background-color: var(--productCard-bg-color);
+    color: var(--button-bg-color);
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 0 0.15em 0.15em var(--productCard-bg-color)
+}
+
 @media (max-width: 1200px) {
     .product-game-image {
         width: 30vw;
