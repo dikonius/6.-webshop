@@ -4,6 +4,7 @@ import { updateProduct, getProducts, getProductById } from "../data/crud.js";
 import { useProductStore } from "../data/store.js";
 import { validateProduct } from "../data/validation.js";
 import "../pages/Admin.css";
+import "../styles/adminForm.css";
 
 const EditProduct = () => {
   const { productId } = useParams();
@@ -21,13 +22,13 @@ const EditProduct = () => {
     price: "",
   });
   const [formErrors, setFormErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async () => {
       console.log("EditProduct productId:", productId);
       console.log("EditProduct current products:", products);
 
-     
       const foundProduct = Array.isArray(products)
         ? products.find((p) => String(p.id) === String(productId))
         : null;
@@ -39,7 +40,6 @@ const EditProduct = () => {
         return;
       }
 
-      // Fetch products if not found
       setLoading(true);
       try {
         const fetchedProducts = await getProducts(setProducts);
@@ -86,26 +86,23 @@ const EditProduct = () => {
       return;
     }
 
-    const updatedProduct = {
-      ...formData,
-      price: Number(formData.price),
-    };
-    console.log("Submitting updated product:", updatedProduct);
-
+    setIsSubmitting(true);
     try {
-      // Remove any existing duplicates in state
+      const updatedProduct = {
+        ...formData,
+        price: Number(formData.price),
+      };
+      console.log("Submitting updated product:", updatedProduct);
+
       setProducts((prev) =>
         (Array.isArray(prev) ? prev : []).filter((p) => String(p.id) !== String(productId))
       );
 
-      // Check if the product exists in Firestore
       const productExists = await getProductById(productId);
       if (productExists) {
-        // Update existing product
         await updateProduct(productId, updatedProduct, setProducts);
         console.log("Product updated successfully, navigating to /admin");
       } else {
-        // Create new product with specified ID
         await createProductWithId(productId, updatedProduct, setProducts);
         console.log("Product created successfully, navigating to /admin");
       }
@@ -113,6 +110,8 @@ const EditProduct = () => {
     } catch (error) {
       console.log("Failed to save product:", error.message);
       setError(`Failed to save product. Please try again.`);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -132,6 +131,7 @@ const EditProduct = () => {
         <button
           className="add-edit-button"
           onClick={() => navigate("/admin")}
+          disabled={isSubmitting}
         >
           Back to Admin
         </button>
@@ -146,6 +146,7 @@ const EditProduct = () => {
         <button
           className="add-edit-button"
           onClick={() => navigate("/admin")}
+          disabled={isSubmitting}
         >
           Back to Admin
         </button>
@@ -155,7 +156,7 @@ const EditProduct = () => {
 
   return (
     <main className="admin-page">
-      <h2 className="product-title-admin">Edit Product</h2>
+      <h2 className="form-title-admin">Edit Product</h2>
       <form onSubmit={handleSubmit} className="product-form">
         <div className="form-group">
           <label htmlFor="type">Type</label>
@@ -164,6 +165,7 @@ const EditProduct = () => {
             name="type"
             value={formData.type}
             onChange={handleChange}
+            disabled={isSubmitting}
           >
             <option value="">Select type</option>
             <option value="game">Game</option>
@@ -181,6 +183,7 @@ const EditProduct = () => {
             value={formData.title}
             onChange={handleChange}
             placeholder="Enter title"
+            disabled={isSubmitting}
           />
           <p className={`error ${formErrors.title ? "visible" : ""}`}>
             {formErrors.title || ""}
@@ -194,6 +197,7 @@ const EditProduct = () => {
             value={formData.description}
             onChange={handleChange}
             placeholder="Enter description"
+            disabled={isSubmitting}
           />
           <p className={`error ${formErrors.description ? "visible" : ""}`}>
             {formErrors.description || ""}
@@ -207,6 +211,7 @@ const EditProduct = () => {
             value={formData.image}
             onChange={handleChange}
             placeholder="Enter image URL"
+            disabled={isSubmitting}
           />
           <p className={`error ${formErrors.image ? "visible" : ""}`}>
             {formErrors.image || ""}
@@ -222,19 +227,25 @@ const EditProduct = () => {
             value={formData.price}
             onChange={handleChange}
             placeholder="Enter price"
+            disabled={isSubmitting}
           />
           <p className={`error ${formErrors.price ? "visible" : ""}`}>
             {formErrors.price || ""}
           </p>
         </div>
         <div className="form-actions">
-          <button type="submit" className="add-edit-button">
-            Save Changes
+          <button
+            type="submit"
+            className="add-edit-button"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Saving..." : "Save Changes"}
           </button>
           <button
             type="button"
             className="delete-button"
             onClick={() => navigate("/admin")}
+            disabled={isSubmitting}
           >
             Cancel
           </button>

@@ -11,9 +11,6 @@
     display: flex;
     align-items: center;
     justify-content:space-around;
-    /* width: 50vw; */
-    min-height: 180px;
-    /* max-height: 200px; */
     background-color: var(--bestText-bg-color);
     color: var(--bestText-color);
     border-radius: 0.5em;
@@ -28,7 +25,6 @@
     justify-content: center;
     text-align: center;
     color: var(--bestText-color);
-    
 }
 
 .product-image-admin {
@@ -45,7 +41,6 @@
 }
 
 .add-edit-button {
-
     background-color: var(--editAdd-btn-bg-color);
     color: var(--button-color);
     border-radius: 0.3em;
@@ -54,19 +49,26 @@
     cursor: pointer;
     margin: 0.25em;
     transition: all 1s;
-
 }
 
-.add-edit-button:hover {
+.add-edit-button:hover:not(:disabled) {
     background-color: var(--editAddHover-bg-color);
     color: white;
     transition: all 0.5s ease-in;
     cursor: pointer;
     transform: scale(1.1);
-    box-shadow: 0 0 0.15em 0.15em var(--productCard-bg-color)
+    box-shadow: 0 0 0.15em 0.15em var(--productCard-bg-color);
 }
-.delete-button {
 
+.add-edit-button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.delete-button {
     background-color: var(--delete-btn-bg-color);
     color: var(--button-color);
     border-radius: 0.3em;
@@ -75,14 +77,21 @@
     cursor: pointer;
     margin: 0.25em;
     transition: all 1s;
-
 }
 
-.delete-button:hover {
+.delete-button:hover:not(:disabled) {
     background-color: var(--deleteHover-btn-bg-color);
     color: white;
     transition: all 0.5s ease-in;
     cursor: pointer;
     transform: scale(1.1);
-    box-shadow: 0 0 0.15em 0.15em var(--productCard-bg-color)
+    box-shadow: 0 0 0.15em 0.15em var(--productCard-bg-color);
+}
+
+.delete-button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }

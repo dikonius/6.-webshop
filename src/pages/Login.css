@@ -1,0 +1,86 @@
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 84vh;
+  overflow: hidden;
+}
+
+.login-form {
+  width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.error {
+  color: #e74c3c;
+  font: 0.9rem;
+  margin-top: 5px;
+  min-height: 20px;
+  line-height: 20px;
+  visibility: hidden;
+}
+
+.error.visible {
+  visibility: visible;
+}
+
+.login-page form,
+.login-page input,
+.login-page label,
+.login-page h2,
+.login-page .error,
+.login-page button {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.login-button {
+  background-color: var(--editAdd-btn-bg-color);
+  color: var(--button-color);
+  border-radius: 0.3em;
+  border: 1px solid var(--buttonBorder-color);
+  padding: 0.5em 1em;
+  cursor: pointer;
+  margin: 0.25em;
+  transition: all 1s;
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: var(--editAddHover-bg-color);
+  color: white;
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0 0 0.15em 0.15em var(--productCard-bg-color);
+}
+
+.login-button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}

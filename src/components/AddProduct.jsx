@@ -17,6 +17,7 @@ const AddProduct = () => {
     price: "",
   });
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,12 +31,20 @@ const AddProduct = () => {
       return;
     }
 
-    const newProduct = {
-      ...formData,
-      price: Number(formData.price),
-    };
-    await addProduct(newProduct, setProducts);
-    navigate("/admin");
+    setIsSubmitting(true);
+    try {
+      const newProduct = {
+        ...formData,
+        price: Number(formData.price),
+      };
+      await addProduct(newProduct, setProducts);
+      navigate("/admin");
+    } catch (error) {
+      console.error("Failed to add product:", error.message);
+      setErrors({ general: "Failed to add product. Please try again." });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -54,6 +63,7 @@ const AddProduct = () => {
             name="type"
             value={formData.type}
             onChange={handleChange}
+            disabled={isSubmitting}
           >
             <option value="">Select type</option>
             <option value="game">Game</option>
@@ -70,6 +80,7 @@ const AddProduct = () => {
             value={formData.title}
             onChange={handleChange}
             placeholder="Enter title"
+            disabled={isSubmitting}
           />
           {errors.title && <p className="error visible">{errors.title}</p>}
           {!errors.title && <p className="error"></p>}
@@ -82,6 +93,7 @@ const AddProduct = () => {
             value={formData.description}
             onChange={handleChange}
             placeholder="Enter description"
+            disabled={isSubmitting}
           />
           {errors.description && <p className="error visible">{errors.description}</p>}
           {!errors.description && <p className="error"></p>}
@@ -94,6 +106,7 @@ const AddProduct = () => {
             value={formData.image}
             onChange={handleChange}
             placeholder="Enter image URL"
+            disabled={isSubmitting}
           />
           {errors.image && <p className="error visible">{errors.image}</p>}
           {!errors.image && <p className="error"></p>}
@@ -108,18 +121,25 @@ const AddProduct = () => {
             value={formData.price}
             onChange={handleChange}
             placeholder="Enter price"
+            disabled={isSubmitting}
           />
           {errors.price && <p className="error visible">{errors.price}</p>}
           {!errors.price && <p className="error"></p>}
         </div>
+        {errors.general && <p className="error visible">{errors.general}</p>}
         <div className="form-actions">
-          <button type="submit" className="add-edit-button">
-            Add Product
+          <button
+            type="submit"
+            className="add-edit-button"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Saving..." : "Add Product"}
           </button>
           <button
             type="button"
             className="delete-button"
             onClick={() => navigate("/admin")}
+            disabled={isSubmitting}
           >
             Cancel
           </button>
