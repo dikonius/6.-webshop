@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { updateProduct, getProducts, getProductById } from "../data/crud.js";
 import { useProductStore } from "../data/store.js";
 import { validateProduct } from "../data/validation.js";
-import "../styles/admin.css";
+import "../pages/Admin.css";
 
 const EditProduct = () => {
   const { productId } = useParams();

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { addProduct } from "../data/crud.js";
 import { useProductStore } from "../data/store.js";
 import { validateProduct } from "../data/validation.js";
-import "../styles/admin.css";
+import "../pages/Admin.css";
 import "../styles/adminForm.css";
 
 const AddProduct = () => {
