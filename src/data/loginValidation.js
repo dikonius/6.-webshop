@@ -1,3 +1,6 @@
+import Joi from "joi";
+
+
 const loginSchema = Joi.object({
   username: Joi.string().min(3).required().messages({
     'string.empty': 'Username is required',
