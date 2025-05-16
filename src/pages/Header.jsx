@@ -12,7 +12,7 @@ const Header = () => {
     <nav className="nav-container">
       <div className="logo-games-container">
         <NavLink to="/" className="navlink-header">
-          <img className={Logo} alt="Logo" />
+          <img className="logo-btn" src={Logo} alt="Logo" />
         </NavLink>
         <NavLink to="/games" className="navlink-header">
           <button className="header-btn">Games</button>
