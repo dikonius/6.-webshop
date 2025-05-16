@@ -24,9 +24,9 @@ const Product = () => {
   }
 
   const handleAddToCart = () => {
-    console.log("Add to cart clicked for product:", product); // Debug log
+    console.log("Add to cart clicked for product:", product);
     addToCart(product);
-    console.log("Cart after adding:", useProductStore.getState().cart); // Debug cart state
+    console.log("Cart after adding:", useProductStore.getState().cart);
   };
 
   const handleBack = () => {
@@ -53,7 +53,7 @@ const Product = () => {
             <p className="welcome-description">
               <span className="key-word">Free shipping</span>
             </p>
-            <p className="welcome-description">
+            <p className="cart-item-description">
               Expected delivery: <span className="key-word">4-6 business days</span>
             </p>
             <div className="product-page-btn-container">
@@ -84,7 +84,7 @@ const Product = () => {
           <p className="welcome-description">
             <span className="key-word">Free shipping</span>
           </p>
-          <p className="welcome-description">
+          <p className="cart-item-description">
             Expected delivery: <span className="key-word">4-6 business days</span>
           </p>
           <div className="product-page-btn-container">

@@ -11,10 +11,10 @@ const useProductStore = create((set) => ({
 
   addToCart: (product) =>
     set((state) => {
-      console.log("Adding product to cart:", product); // Debug log
+      console.log("Adding product to cart:", product); 
       const existingItem = state.cart.find((item) => item.id === product.id);
       if (existingItem) {
-        console.log("Updating existing item:", existingItem); // Debug log
+        console.log("Updating existing item:", existingItem); 
         return {
           cart: state.cart.map((item) =>
             item.id === product.id
@@ -23,7 +23,7 @@ const useProductStore = create((set) => ({
           ),
         };
       }
-      console.log("Adding new item to cart"); // Debug log
+      console.log("Adding new item to cart"); 
       return {
         cart: [...state.cart, { ...product, quantity: 1 }],
       };

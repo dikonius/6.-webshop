@@ -1,11 +1,11 @@
-// import { useNavigate } from "react-router-dom";
+
 import { useProductStore } from "../data/store.js"; 
 import "./Cart.css";
 import "../styles/adminForm.css";
 import TotalPrice from "../components/TotalPrice.jsx";
 
 const Cart = () => {
-//   const navigate = useNavigate();
+  
   const cart = useProductStore((state) => state.cart); 
   const updateCartQuantity = useProductStore((state) => state.updateCartQuantity); 
 

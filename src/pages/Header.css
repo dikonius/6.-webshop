@@ -10,7 +10,6 @@
 .logo-games-container, .consoles-cart-container {
     display: flex;
     justify-content: space-around;
-    /* align-items: center; */
     flex-grow: 1;
 }
 

@@ -3,17 +3,21 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 84vh;
+  min-height: 82vh;
   overflow: hidden;
 }
 
 .login-form {
-  width: 500px;
+  /* width: 500px; */
   margin: 20px auto;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-group {
@@ -83,4 +87,10 @@
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
+}
+
+@media (max-width: 480px) {
+  .login-form {
+    width: 90%;
+  }
 }

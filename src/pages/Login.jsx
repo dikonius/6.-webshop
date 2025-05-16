@@ -52,7 +52,7 @@ const Login = () => {
 
   return (
     <main className="login-page">
-      <h2>Admin Login</h2>
+      <h2 className="form-title-admin">Admin Login</h2>
       <form onSubmit={handleSubmit} className="login-form">
         <div className="form-group">
           <label htmlFor="username">Username</label>

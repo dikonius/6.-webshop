@@ -1,0 +1,40 @@
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 1em 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.8em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: "Oxanium", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-weight: bold;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--editAdd-btn-bg-color, #4a90e2);
+  box-shadow: 0 0 0.15em 0.15em var(--productCard-bg-color, rgba(0, 0, 0, 0.1));
+}
+
+.search-input::placeholder {
+  color: #999;
+  font-family: "Oxanium", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
+@media (max-width: 617px) {
+  .search-container {
+    padding: 0 1em;
+  }
+}
