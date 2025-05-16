@@ -1,6 +1,7 @@
 import "./Header.css";
 import { NavLink } from "react-router-dom"; 
-import { useProductStore } from "../data/store.js"; 
+import { useProductStore } from "../data/store.js";
+import cartImg from "../assets/cart-icon.png";
 
 const Header = () => {
   const cart = useProductStore((state) => state.cart);
@@ -24,7 +25,7 @@ const Header = () => {
           <div className="cart-icon-container">
             <img
               className="cart-btn"
-              src="/6.-webshop/src/assets/cart-icon.png"
+              src={cartImg}
               alt="Cart"
             />
             {cartItemCount > 0 && (
