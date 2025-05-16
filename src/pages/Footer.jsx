@@ -4,6 +4,9 @@ import { useAuth } from '../components/AuthContext.jsx';
 
 const Footer = () => {
   const { isAuthenticated, logout } = useAuth();
+  const facebookLogo = '/6.-webshop/src/assets/face-logo.png';
+  const instagramLogo = '/6.-webshop/src/assets/inst-logo.png';
+  const xLogo = '/src/assets/xcom-logo.jpeg';
 
   return (
     <footer className="footer-container">
@@ -21,13 +24,13 @@ const Footer = () => {
 
       <div className="socials-container">
         <a className="social-links" href="https://x.com/" target="_blank" rel="noopener noreferrer">
-          <img className="social-logos" src="/6.-webshop/src/assets/xcom-logo.jpeg" alt="X.com logo" />
+          <img className="social-logos" src={xLogo} alt="X.com logo" />
         </a>
         <a className="social-links" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-          <img className="social-logos" src="/6.-webshop/src/assets/inst-logo.png" alt="Instagram logo" />
+          <img className="social-logos" src={instagramLogo} alt="Instagram logo" />
         </a>
         <a className="social-links" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-          <img className="social-logos" src="/6.-webshop/src/assets/face-logo.png" alt="Facebook logo" />
+          <img className="social-logos" src={facebookLogo}alt="Facebook logo" />
         </a>
       </div>
 
