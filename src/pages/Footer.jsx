@@ -1,12 +1,12 @@
 import './Footer.css';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../components/AuthContext.jsx';
+import instaLogo from '../assets/inst-logo.png';
+import faceLogo from '../assets/face-logo.png';
+import xLogo from '../assets/xcom-logo.jpeg'; 
 
 const Footer = () => {
   const { isAuthenticated, logout } = useAuth();
-  const facebookLogo = '/6.-webshop/src/assets/face-logo.png';
-  const instagramLogo = '/6.-webshop/src/assets/inst-logo.png';
-  const xLogo = '/src/assets/xcom-logo.jpeg';
 
   return (
     <footer className="footer-container">
@@ -27,10 +27,10 @@ const Footer = () => {
           <img className="social-logos" src={xLogo} alt="X.com logo" />
         </a>
         <a className="social-links" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-          <img className="social-logos" src={instagramLogo} alt="Instagram logo" />
+          <img className="social-logos" src={instaLogo} alt="Instagram logo" />
         </a>
         <a className="social-links" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-          <img className="social-logos" src={facebookLogo}alt="Facebook logo" />
+          <img className="social-logos" src={faceLogo}alt="Facebook logo" />
         </a>
       </div>
 
