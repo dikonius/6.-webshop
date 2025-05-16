@@ -10,7 +10,7 @@ const Header = () => {
     <nav className="nav-container">
       <div className="logo-games-container">
         <NavLink to="/" className="navlink-header">
-          <img className="logo-btn" src="/src/assets/logo.png" alt="Logo" />
+          <img className="logo-btn" src="../assets/logo.png" alt="Logo" />
         </NavLink>
         <NavLink to="/games" className="navlink-header">
           <button className="header-btn">Games</button>
@@ -24,7 +24,7 @@ const Header = () => {
           <div className="cart-icon-container">
             <img
               className="cart-btn"
-              src="/src/assets/cart-icon.png"
+              src="../assets/cart-icon.png"
               alt="Cart"
             />
             {cartItemCount > 0 && (

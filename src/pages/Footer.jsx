@@ -21,13 +21,13 @@ const Footer = () => {
 
       <div className="socials-container">
         <a className="social-links" href="https://x.com/" target="_blank" rel="noopener noreferrer">
-          <img className="social-logos" src="/src/assets/xcom-logo.jpeg" alt="X.com logo" />
+          <img className="social-logos" src="../assets/xcom-logo.jpeg" alt="X.com logo" />
         </a>
         <a className="social-links" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-          <img className="social-logos" src="/src/assets/inst-logo.png" alt="Instagram logo" />
+          <img className="social-logos" src="../assets/inst-logo.png" alt="Instagram logo" />
         </a>
         <a className="social-links" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-          <img className="social-logos" src="/src/assets/face-logo.png" alt="Facebook logo" />
+          <img className="social-logos" src="../assets/face-logo.png" alt="Facebook logo" />
         </a>
       </div>
 
