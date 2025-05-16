@@ -2,6 +2,7 @@ import "./Header.css";
 import { NavLink } from "react-router-dom"; 
 import { useProductStore } from "../data/store.js";
 import cartImg from "../assets/cart-icon.png";
+import Logo from "../assets/logo.png";
 
 const Header = () => {
   const cart = useProductStore((state) => state.cart);
@@ -11,7 +12,7 @@ const Header = () => {
     <nav className="nav-container">
       <div className="logo-games-container">
         <NavLink to="/" className="navlink-header">
-          <img className="logo-btn" src="/6.-webshop/src/assets/logo.png" alt="Logo" />
+          <img className={Logo} alt="Logo" />
         </NavLink>
         <NavLink to="/games" className="navlink-header">
           <button className="header-btn">Games</button>
