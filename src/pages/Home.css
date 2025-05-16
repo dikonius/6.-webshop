@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* flex-wrap: wrap; */
     justify-content: center;
     background-color: var(--main-bg-color);
     
@@ -99,7 +98,6 @@
 
 .best-product-title{
     margin-top: auto;
-    /* width: auto; */
     
 }
 

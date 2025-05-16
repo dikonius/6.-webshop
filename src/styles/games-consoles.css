@@ -64,7 +64,6 @@
     padding: 0.5em;
     transition: all 1s;
     margin: 0.5em;
-    /* gap: 1em; */
 
     .console-price {
         font-family: 'Courier New', Courier, monospace;

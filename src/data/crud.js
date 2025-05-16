@@ -7,7 +7,7 @@ async function getProducts(setProducts) {
     const productsSnapshot = await getDocs(productsCollection);
     const productsList = productsSnapshot.docs.map((doc) => {
       const data = doc.data();
-      // Ensure id is the document ID, not overridden by data.id
+
       return {
         id: String(doc.id),
         ...data,
@@ -43,7 +43,7 @@ async function getProductById(productId) {
 
 async function addProduct(product, setProducts) {
   try {
-    // Ensure no id field is included in the document
+
     const { id, ...productData } = product;
     const productsCollection = collection(db, "Switch Again");
     const docRef = await addDoc(productsCollection, productData);
@@ -60,7 +60,7 @@ async function addProduct(product, setProducts) {
 
 async function updateProduct(productId, updatedProduct, setProducts) {
   try {
-    // Ensure no id field is included in the document
+
     const { id, ...productData } = updatedProduct;
     const productDoc = doc(db, "Switch Again", String(productId));
     await updateDoc(productDoc, productData);

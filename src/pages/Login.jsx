@@ -1,18 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../components/AuthContext.jsx';
-import Joi from 'joi';
+import loginSchema from '../data/loginValidation.js';
 import './Login.css';
-
-const loginSchema = Joi.object({
-  username: Joi.string().min(3).required().messages({
-    'string.empty': 'Username is required',
-    'string.min': 'Username must be at least 3 characters long',
-  }),
-  password: Joi.string().min(8).required().messages({
-    'string.empty': 'Password is required',
-    'string.min': 'Password must be at least 8 characters long',
-  }),
-});
 
 const Login = () => {
   const { login } = useAuth();
@@ -42,7 +31,6 @@ const Login = () => {
       return;
     }
 
-  
     if (formData.username === 'admin' && formData.password === 'password') {
       login(formData);
     } else {
