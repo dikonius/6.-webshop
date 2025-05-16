@@ -24,10 +24,10 @@ const Footer = () => {
           <img className="social-logos" src="./public/xcom-logo.jpeg" alt="X.com logo" />
         </a>
         <a className="social-links" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-          <img className="social-logos" src="/public/inst-logo.png" alt="Instagram logo" />
+          <img className="social-logos" src="./public/inst-logo.png" alt="Instagram logo" />
         </a>
         <a className="social-links" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-          <img className="social-logos" src="/public/face-logo.png" alt="Facebook logo" />
+          <img className="social-logos" src="./public/face-logo.png" alt="Facebook logo" />
         </a>
       </div>
 

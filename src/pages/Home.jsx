@@ -6,7 +6,7 @@ const Home = () => {
 
 	return (
 		<main className="home-page">
-			<img src="../assets/logo.png" alt="Switch Again Logo" className="hero-logo" />
+			<img src="./public/logo.png" alt="Switch Again Logo" className="hero-logo" />
 			<div className="hero-container">
 				
 				<p className="welcome-description">Welcome to Switch Again! Your<span className="key-word"> Online Second-Hand </span>Nintendo Switch Store!</p>
@@ -26,7 +26,7 @@ const Home = () => {
 			<h3 className="ns2-announcement-top">Get Ready!</h3>
 			<h3 className="ns2-announcement"><span className="key-word">Follow us </span>on social media to be the first to know when Nintendo Switch 2 is <span className="key-word"> in stock!</span></h3>
 			
-			<img src="../assets/sw2.png" alt="Nintendo Switch 2 Announcement" className="ns2-img" />
+			<img src="./public/sw2.png" alt="Nintendo Switch 2 Announcement" className="ns2-img" />
 			
 
 			
